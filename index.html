@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Undo and Redo Notepad</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <h1>Undo and Redo Notepad</h1>
+
+    <form id="add-form" class="add-form" novalidate>
+      <label for="line-input">New line of text</label>
+      <div class="add-row">
+        <input id="line-input" type="text" maxlength="60" autocomplete="off">
+        <button type="submit" class="btn btn-primary">Add line</button>
+      </div>
+    </form>
+    <p id="message" class="message" role="status" aria-live="polite"></p>
+
+    <div class="controls">
+      <button type="button" class="btn" id="undo-btn">Undo</button>
+      <button type="button" class="btn" id="redo-btn">Redo</button>
+      <button type="button" class="btn" id="sample-btn">Reset sample</button>
+      <button type="button" class="btn" id="clear-btn">Clear all</button>
+    </div>
+
+    <section class="stack-section" aria-labelledby="doc-title">
+      <div class="stack-head">
+        <h2 id="doc-title">Document</h2>
+        <p class="count" id="doc-count"></p>
+      </div>
+      <ul id="doc-stack" class="stack"></ul>
+    </section>
+
+    <section class="stack-section" aria-labelledby="redo-title">
+      <div class="stack-head">
+        <h2 id="redo-title">Undone lines</h2>
+        <p class="count" id="redo-count"></p>
+      </div>
+      <ul id="redo-stack" class="stack"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
